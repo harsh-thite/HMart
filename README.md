@@ -1,4 +1,4 @@
-## HMARt: Full-Stack E-Commerce Web Application
+## HMart: Full-Stack E-Commerce Web Application
 ![image](https://github.com/user-attachments/assets/0578f27f-3a21-43da-b16e-70be3d8dcc54)
 
 
