@@ -2,26 +2,30 @@
 {% block content %}
 {% load static %}
 <!-- Thank You area start -->
-        <div class="thank-you-area">
-            <div class="container">
-                <div class="row justify-content-center align-items-center">
-                    <div class="col-md-8">
-                        <div class="inner_complated">
-                            <div class="img_cmpted"><img src="{% static 'assets/images/icons/cmpted_logo.png' %}" alt=""></div>
-                            <p class="dsc_cmpted">Thank you for ordering in our store. You will receive a confirmation
-                                email shortly.</p>
-                            <div class="btn_cmpted">
-                                <a href="shop-4-column.html" class="shop-btn" title="Go To Shop">Continue Shopping </a>
-                            </div>
-                        </div>
-                        <div class="main_quickorder text-align-center">
-                            <h3 class="title">Call Us for Quick Order</h3>
-                            <div class="cntct typewriter-effect"><span class="call_desk"><a href="tel:+91 7894561231" id="typewriter_num">(91) 789 456 1231</a></span></div>
-                        </div>
+<div class="thank-you-area py-5" style="background-color: #f9f9f9;">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-8">
+                <div class="inner_complated p-4 text-center" style="background-color: #fff; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
+                    <div class="img_cmpted mb-4">
+                        <img src="{% static 'assets/images/icons/cmpted_logo.png' %}" alt="" style="width: 100px; height: auto;">
+                    </div>
+                    <p class="dsc_cmpted mb-4" style="font-size: 18px; color: #333;">
+                        Thank you for your order! A confirmation email will arrive shortly.
+                    </p>
+
+                </div>
+                <div class="main_quickorder mt-5 text-center">
+                    <h3 class="title mb-3" style="font-size: 24px; color: #333;">Need Assistance? Call Us for a Quick Order</h3>
+                    <div class="cntct typewriter-effect">
+                        <span class="call_desk">
+                            <a href="tel:+91 7894561231" id="typewriter_num" style="font-size: 20px; font-weight: bold; color: #007bff;">(91) 789 456 1231</a>
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Thank You area end -->
-
+    </div>
+</div>
+<!-- Thank You area end -->
 {% endblock %}

@@ -208,18 +208,27 @@ def cart_detail(request):
 
 def Check_out(request):
     amount_str = request.POST.get('amount')
-    amount_float = float(amount_str)
-    amount = int(amount_float)
-
-    payment = client.order.create({
-        "amount": amount,
-        "currency": "INR",
-        "payment_capture": "1"  # Automatically capture the payment when it's authorized
-    })
-
-    order_id = payment['id']
-    context = {'order_id': order_id, 'payment': payment}
+    if amount_str:
+        try:
+            amount_float = float(amount_str)
+            amount_in_rupees = int(amount_float)
+            amount_in_paise = amount_in_rupees * 100
+        except ValueError:
+            amount_in_paise = 0
+    else:
+        amount_in_paise = 0
+    if amount_in_paise > 0:
+        payment = client.order.create({
+            "amount": amount_in_paise,  # Send amount in paise
+            "currency": "INR",
+            "payment_capture": "1"
+        })
+        order_id = payment['id']
+        context = {'order_id': order_id, 'payment': payment, 'amount': amount_in_rupees}
+    else:
+        context = {'error': 'Invalid payment amount'}
     return render(request, 'Cart/checkout.html', context)
+
 
 
 def PLACE_ORDER(request):
