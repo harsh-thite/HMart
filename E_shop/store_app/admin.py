@@ -18,6 +18,8 @@ class OrderItemTublerinline(admin.TabularInline):
 
 class OrderAdmin(admin.ModelAdmin):
     inlines=[OrderItemTublerinline]
+    list_display = ['firstname','lastname','phone','email','payment_id','paid','date']
+    search_fields = ['firstname','email','payment_id']
 
 
 

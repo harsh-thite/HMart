@@ -207,8 +207,12 @@ def cart_detail(request):
 
 
 def Check_out(request):
+    amount_str = request.POST.get('amount')
+    amount_float = float(amount_str)
+    amount = int(amount_float)
+
     payment = client.order.create({
-        "amount": 500,
+        "amount": amount,
         "currency": "INR",
         "payment_capture": "1"  # Automatically capture the payment when it's authorized
     })
@@ -270,6 +274,7 @@ def PLACE_ORDER(request):
             print(f"Total for item {i}: {total}")
 
             item = OrderItem(
+                user=user,
                 order=order,
                 product=cart[i]['name'],
                 image=cart[i]['image'],
@@ -295,3 +300,13 @@ def success(request):
         user.paid = True
         user.save()
     return render(request,'Cart/thank-you.html')
+
+
+def Your_Order(request):
+    uid = request.session.get('_auth_user_id')
+    user = User.objects.get(id=uid)
+    order = OrderItem.objects.filter(user=user).order_by('-id')
+    context = {
+        'order': order
+    }
+    return render(request, 'Main/your_order.html', context)

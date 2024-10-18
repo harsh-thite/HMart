@@ -160,7 +160,13 @@
                                         </ul>
                                     </div>
                                     <h4 class="grand-totall-title">Grand Total <span>₹{{cart_total_amount|add:90}}</span></h4>
-                                    <a href="checkout.html">Proceed to Checkout</a>
+
+                                    <form method="post" action="{% url 'checkout' %}">
+                                        {% csrf_token %}
+                                        <input value="{{cart_total_amount}}" name="amount" hidden>
+                                        <a href="checkout.html"><button type="submit" class="text-light"> Proceed to Checkout </button></a>
+
+                                    </form>
                                 </div>
                             </div>
                         </div>

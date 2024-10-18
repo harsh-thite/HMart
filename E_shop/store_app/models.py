@@ -112,7 +112,8 @@ class Order(models.Model):
        return self.user.username
 
 class OrderItem(models.Model):
-    order = models.ForeignKey(Order, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, null=True)
     product = models.CharField(max_length=200)
     image = models.ImageField(upload_to='Product_images/iOrder_Img')
     quantity = models.CharField(max_length=20)
