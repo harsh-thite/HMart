@@ -1,5 +1,6 @@
-## HMARt: Full-Stack E-Commerce Web Application
-![image](https://github.com/user-attachments/assets/0578f27f-3a21-43da-b16e-70be3d8dcc54)
+## HMart: Full-Stack E-Commerce Web Application
+![Screenshot (343)](https://github.com/user-attachments/assets/02ac8938-17b1-4579-87df-4ba2bc99a60d)
+
 
 
 HMARt is a full-stack e-commerce platform built using Django, specifically designed for electronics shopping. It features user authentication, product listings, a shopping cart, and secure payment integration with Razorpay. This README will guide you through setting up, installing, and using the HMARt application.
