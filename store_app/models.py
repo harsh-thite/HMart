@@ -122,4 +122,3 @@ class OrderItem(models.Model):
 
     def __str__(self):
       return self.order.user.username
-
