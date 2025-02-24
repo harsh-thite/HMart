@@ -128,6 +128,5 @@ EMAIL_HOST_PASSWORD = 'Guddu@1969'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-
 RAZORPAY_KEY_ID = 'rzp_test_daYnHYfeHfudHr'
 RAZORPAY_KEY_SECRET = 'AiahOLo9jSKo7DV8WrXk7Mad'
